@@ -32,8 +32,7 @@ function Ticket() {
 
   const { notes } = useSelector((state) => state.notes)
 
-  // NOTE: no need for two useParams
-  // const params = useParams()
+ 
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { ticketId } = useParams()
@@ -45,8 +44,7 @@ function Ticket() {
 
   // Close ticket
   const onTicketClose = () => {
-    // NOTE: we can unwrap our AsyncThunkACtion here so no need for isError and
-    // isSuccess state
+    
     dispatch(closeTicket(ticketId))
       .unwrap()
       .then(() => {
@@ -58,8 +56,7 @@ function Ticket() {
 
   // Create note submit
   const onNoteSubmit = (e) => {
-    // NOTE: we can unwrap our AsyncThunkACtion here so no need for isError and
-    // isSuccess state
+    
     e.preventDefault()
     dispatch(createNote({ noteText, ticketId }))
       .unwrap()

@@ -2,8 +2,7 @@ const asyncHandler = require('express-async-handler')
 
 const Ticket = require('../models/ticketModel')
 
-// NOTE: no need to get the user, we already have them on req object from
-// protect middleware. The protect middleware already checks for valid user.
+
 
 // @desc    Get user tickets
 // @route   GET /api/tickets
